@@ -39,10 +39,9 @@ drones_amqplib/
 3. [Installation](#installation)  
 4. [Usage](#usage)  
 5. [Configuration (env)](#configuration-env)  
-6. [Important notes about AMQP queue properties](#important-notes-about-amqp-queue-properties)  
-7. [Message examples & expected output](#message-examples--expected-output)  
-8. [Graceful shutdown](#graceful-shutdown)  
-9. [License](#license)  
+6. [Message examples & expected output](#message-examples--expected-output)  
+7. [Graceful shutdown](#graceful-shutdown)  
+8. [License](#license)  
 
 ---
 
