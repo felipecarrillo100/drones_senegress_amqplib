@@ -23,8 +23,8 @@ The incoming data — published by Senegress via a RabbitMQ server — contains 
 drones_amqplib/
 ├── index.js                  # Main entry point, consumes AMQP queues and republishes to MQTT
 ├── modules/
-│   ├── MapMessage.js         # Contains MapMessage() and mapMannedAviationMessage() mapping functions
-│   └── MessageProducerMQTT.js# MQTT producer wrapper for connecting and publishing
+│   ├── MapMessage.js         # Contains mapDroneMessage() and mapMannedAviationMessage() mapping functions
+│   └── MessageProducerMQTT.js# MQTT producer wrapper for connecting and publishing to MQTT
 ├── .env                      # Environment variables (never commit to Git!)
 ├── .env.sample               # Example environment variables for developers
 ├── package.json              # Project metadata, dependencies, and scripts
@@ -107,6 +107,7 @@ This repository expects configuration in environment variables (you can place a 
 - `EGRESS_USER` — AMQP username
 - `EGRESS_PASS` — AMQP password
 - `EGRESS_VHOST` — AMQP vhost (virtual host)
+- `EGRESS_QUEUES` — Queues to request (manned_aviation_data,fused_data)
 - `MQTT_BROKER` — MQTT broker URL (e.g. `mqtt://localhost:1883`)
 - `MQTT_USERNAME` — MQTT username (optional)
 - `MQTT_PASSWORD` — MQTT password (optional)

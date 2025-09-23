@@ -8,7 +8,9 @@ const EGRESS_PASS = process.env.EGRESS_PASS;
 const EGRESS_VHOST = process.env.EGRESS_VHOST;
 const AMQP_URL = `amqp://${EGRESS_USER}:${EGRESS_PASS}@senegress.senair.io:5672/${EGRESS_VHOST}`;
 
-const QUEUES = ['manned_aviation_data', 'fused_data'];
+const QUEUES = process.env.EGRESS_QUEUES
+    ? process.env.EGRESS_QUEUES.split(',').map(q => q.trim())
+    : [];
 
 const MQTT_BROKER = process.env.MQTT_BROKER;
 const MQTT_USERNAME = process.env.MQTT_USERNAME;
