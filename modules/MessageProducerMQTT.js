@@ -49,13 +49,19 @@ class MessageProducerMQTT {
     this.client.publish(topic, payload);
   }
 
-  disconnect() {
-    if (this.client) {
-      this.client.end();
-      this.connected = false;
-      console.log('MQTT client disconnected');
+    disconnect() {
+        return new Promise((resolve) => {
+            if (this.client) {
+                this.client.end(false, () => {
+                    console.log("MQTT client disconnected.");
+                    this.client = null;
+                    resolve();
+                });
+            } else {
+                resolve();
+            }
+        });
     }
-  }
 
   createPath(path) {
     return path;

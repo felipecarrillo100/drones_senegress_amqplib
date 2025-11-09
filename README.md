@@ -104,13 +104,16 @@ What happens after start:
 
 This repository expects configuration in environment variables (you can place a `.env` in project root and use `dotenv`). These are the variables read by the bridge:
 
+- `EGRESS_HOST` — AMQP HOST Default is 'senegress.senair.io';
+- `EGRESS_PORT` — AMPQ PORTv Default is 5672;
 - `EGRESS_USER` — AMQP username
 - `EGRESS_PASS` — AMQP password
-- `EGRESS_VHOST` — AMQP vhost (virtual host)
+- `EGRESS_VHOST` — AMQP vhost (virtual host, e.g. `hexagon`)
 - `EGRESS_QUEUES` — Queues to request (manned_aviation_data,fused_data)
-- `MQTT_BROKER` — MQTT broker URL (e.g. `mqtt://localhost:1883`)
-- `MQTT_USERNAME` — MQTT username (optional)
-- `MQTT_PASSWORD` — MQTT password (optional)
+- `MQTT_HOST` — MQTT broker HOST (e.g. `localhost`)
+- `MQTT_PORT` — MQTT broker PORT (e.g. 1883)
+- `MQTT_USER` — MQTT username (optional)
+- `MQTT_PASS` — MQTT password (optional)
 - `MQTT_TOPIC` — Root topic to publish messages under (e.g. `producers/senegress/data`)
 
 > The bridge will build topics like: `producers/senegress/data/manned_aviation_data/<track-id>`
